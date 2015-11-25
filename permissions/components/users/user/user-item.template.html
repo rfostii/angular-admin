@@ -1,0 +1,22 @@
+<div href="#" class="list-group-item user-list-item">
+  <div class="list-group-item-heading row">
+      <div class="col-md-3"><strong>FirstName:</strong> {{userItem.user.firstname}}</div>
+      <div class="col-md-3"><strong>LastName:</strong> {{userItem.user.lastname}}</div>
+      <div class="col-md-3"><strong>CAI:</strong> {{userItem.user.cai}}</div>
+      <div class="col-md-3">
+        <label><input type="checkbox" ng-model="userItem.user.active">Active</label>
+      </div>
+  </div>
+  <div class="list-group-item-text row">
+    <h4>Permissions:</h4>
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <span ng-repeat="permission in userItem.user.permissions track by $index">
+          <strong ng-if="permission.areas.length > 0">{{::permission.name}}:</strong>
+          <span class="permissions-areas" ng-repeat="area in permission.areas">{{::area.name}}{{$last ? ';' : ','}}</span>
+        </span>
+      </div>
+    </div>
+    <a href="#" class="edit-user-permissions" permissions-modal-dialog user="userItem.user">Edit permissions</a>
+  </div>
+</div>

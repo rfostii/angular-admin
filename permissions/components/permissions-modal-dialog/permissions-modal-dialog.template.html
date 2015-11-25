@@ -1,0 +1,34 @@
+<!-- Modal -->
+<div class="modal-backdrop in"></div>
+<div class="modal fade user-modal-dialog" tabindex="-1" role="dialog" aria-labelledby="user-modal-dialog-label">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" >{{::permissionsModalDialog.modalTitle}}</h4>
+      </div>
+      <div class="modal-body">
+        <form name="userModalDialog.permissionsForm">
+          <div class="form-group">
+            <label for="user-permissions">Permissions</label>
+            <select id="user-permissions" class="form-control" multiple>
+              <optgroup
+                ng-if="permissionsModalDialog.showFactory(permission)"
+                ng-repeat="permission in permissionsModalDialog.permissions track by $index" label="{{::permission.name}}">
+                <option
+                  ng-selected="permissionsModalDialog.isAreaSelected(permissionsModalDialog.user.permissions, permission)"
+                  ng-repeat="area in permission.areas track by $index"
+                  value="{{::area.id}}"
+                >{{::area.name}}</option>
+              </optgroup>
+            </select>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="permissionsModalDialog.saveUserData()">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>

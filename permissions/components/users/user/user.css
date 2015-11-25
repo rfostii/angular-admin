@@ -1,0 +1,18 @@
+.user-list-item {
+  margin: 0.5rem 0;
+  font-size: 1.8rem;
+  padding: 0 2rem;
+}
+
+.user-list-item .row > div {
+  margin: 0.5rem 0;
+  padding: 0;
+}
+
+.user-list-item .permissions-areas {
+  font-style: oblique;
+}
+
+.user-list-item .edit-user-permissions {
+  margin: 2rem 0;
+}

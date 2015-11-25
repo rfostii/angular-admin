@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+		<style>
+			#app {
+				position: relative;
+				width: 40%;
+				margin: 2rem auto;
+			}
+		</style>
+		<link rel="stylesheet" href="/dist/style.css">
+		<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+		<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+		<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<button class="btn btn-default" permissions-modal-dialog modal-title="Add User" user="{}">Add User</button>
+			<users-list users="users"></users-list>
+		</div>
+		<script type="text/javascript" src="/dist/bundle.js"></script>
+		<script type="text/javascript">
+			angular.module('admin', ['admin.permissions']);
+			angular.bootstrap(document.getElementById('app'), ['admin']);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,61 @@
+[
+  {
+    "firstname": "Ruslan",
+    "lastname": "Fostii",
+    "cai": "RFOS",
+    "active": true,
+    "permissions": [
+      {
+        "id": 1,
+        "name": "CD Edit",
+        "active": true,
+        "areas": [
+          {
+            "id": 1,
+            "name": "XYZ"
+          },
+          {
+            "id": 2,
+            "name":"ABC"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "CD Create",
+        "active": false,
+        "areas": []
+      }
+    ]
+  },
+  {
+    "firstname": "Oleg",
+    "lastname": "Petrov",
+    "cai": "OPET",
+    "active": true,
+    "permissions": [
+      {
+        "id": 4,
+        "name": "DPR Edit",
+        "active": true,
+        "areas": [
+          {
+            "id": 2,
+            "name":"DEF"
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "name": "EXEC Edit",
+        "active": true,
+        "areas": [
+          {
+            "id": 4,
+            "name": "all"
+          }
+        ]
+      }
+    ]
+  }
+]
