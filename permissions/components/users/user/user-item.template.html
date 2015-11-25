@@ -1,4 +1,4 @@
-<div href="#" class="list-group-item user-list-item">
+<div href="#" class="list-group-item user-list-item" ng-class="{active: !userItem.user.active}">
   <div class="list-group-item-heading row">
       <div class="col-md-3"><strong>FirstName:</strong> {{userItem.user.firstname}}</div>
       <div class="col-md-3"><strong>LastName:</strong> {{userItem.user.lastname}}</div>
@@ -17,6 +17,7 @@
         </span>
       </div>
     </div>
-    <a href="#" class="edit-user-permissions" permissions-modal-dialog user="userItem.user">Edit permissions</a>
+    <a href="#" class="edit-user-permissions" 
+      permissions-modal-dialog user="userItem.user">Edit permissions</a>
   </div>
 </div>

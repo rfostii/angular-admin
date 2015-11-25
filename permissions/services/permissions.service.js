@@ -1,0 +1,44 @@
+(function() {
+  'use strict';
+
+  angular.module('admin.permissions')
+    .factory('permissionsService', PermissionsService);
+
+  PermissionsService.$inject = ['$http'];
+
+  function PermissionsService($http) {
+    var permissionsService = {
+      permissions: [],
+      areas: [],
+      fetchPermissions: fetchPermissions,
+      savePermissions: savePermissions,
+      fetchAreas: fetchAreas
+    };
+
+    return permissionsService;
+
+    ///////////////////////////////////////////
+
+    function fetchPermissions() {
+      //TODO: fetch real data from server using $http service or $resource
+      return $http.get('/data/permissions.json').then(function(response) {
+        permissionsService.permissions = response.data;
+        return response.data;
+      });
+    }
+
+    function fetchAreas() {
+      //TODO: fetch real data from server using $http service or $resource
+      return $http.get('/data/areas.json').then(function(response) {
+        permissionsService.areas = response.data;
+        return response.data;
+      });
+    }
+
+    function savePermissions(permission) {
+      if (permissionsService.permissions.indexOf(permissions) === -1) {
+          permissionsService.permissions.push(permissions);
+      }
+    }
+  }
+})();

@@ -11,8 +11,7 @@
     var userService = {
       users: [],
       fetchUsers: fetchUsers,
-      saveUser: saveUser,
-      getPermissions: getPermissions
+      saveUser: saveUser
     };
 
     return userService;
@@ -31,11 +30,6 @@
       if (userService.users.indexOf(user) === -1) {
           userService.users.push(user);
       }
-    }
-
-    function getPermissions() {
-      //TODO: fetch real data from server using $http service or $resource
-      return $http.get('/data/permissions.json');
     }
   }
 })();

@@ -8,26 +8,19 @@
         <h4 class="modal-title" >{{::permissionsModalDialog.modalTitle}}</h4>
       </div>
       <div class="modal-body">
-        <form name="userModalDialog.permissionsForm">
-          <div class="form-group">
-            <label for="user-permissions">Permissions</label>
-            <select id="user-permissions" class="form-control" multiple>
-              <optgroup
-                ng-if="permissionsModalDialog.showFactory(permission)"
-                ng-repeat="permission in permissionsModalDialog.permissions track by $index" label="{{::permission.name}}">
-                <option
-                  ng-selected="permissionsModalDialog.isAreaSelected(permissionsModalDialog.user.permissions, permission)"
-                  ng-repeat="area in permission.areas track by $index"
-                  value="{{::area.id}}"
-                >{{::area.name}}</option>
-              </optgroup>
-            </select>
-          </div>
+        <form name="permissionsModalDialog.permissionsForm">
+          <div class="form-group" ng-repeat="permission in permissionsModalDialog.user.permissions"            
+            <label>{{::permission.name}}</label>
+            <select class="form-control" multiple                 
+              ng-model="permission.areas"
+              ng-options="area.name for area in permissionsModalDialog.areas track by area.id"
+            ></select>
+          </div>                      
         </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="permissionsModalDialog.saveUserData()">Save changes</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="permissionsModalDialog.saveUserData()">Save</button>
       </div>
     </div>
   </div>
