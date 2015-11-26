@@ -10,6 +10,9 @@
 				width: 40%;
 				margin: 2rem auto;
 			}
+			.right {
+				float: right;
+			}
 		</style>
 		<link rel="stylesheet" href="/dist/style.css">
 		<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
@@ -18,7 +21,21 @@
 	</head>
 	<body>
 		<div id="app">
-			<button class="btn btn-default" permissions-modal-dialog modal-title="Add User">Add User</button>
+			<div class="panel panel-default">
+			  <div class="panel-body">
+					<div class="row">
+						<div class="col-md-4">
+							<button class="btn btn-default" permissions-modal-dialog modal-title="Add User">Add User</button>
+						</div>
+						<div class="col-md-4">
+							<order-users></order-users>
+						</div>
+						<div class="col-md-4">
+							<user-search></user-search>
+						</div>
+					</div>
+			  </div>
+			</div>
 			<users-list users="users"></users-list>
 		</div>
 		<script type="text/javascript" src="/dist/bundle.js"></script>

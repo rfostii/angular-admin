@@ -1,0 +1,11 @@
+<div class="dropdown right">
+  <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    {{orderUsers.selectedOrderType.name}}
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu">
+    <li ng-repeat="orderType in orderUsers.orderTypes">
+      <a href="#" ng-click="orderUsers.selectOrderType(orderType)">{{::orderType.name}}</a>
+    </li>
+  </ul>
+</div>

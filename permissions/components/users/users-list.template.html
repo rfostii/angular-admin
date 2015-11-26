@@ -1,3 +1,5 @@
 <div class="list-group">
-  <user-item ng-repeat="user in usersList.users track by $index" user="user"></user-item>
+  <user-item
+    ng-repeat="user in usersList.getListOfUsers() | orderBy : usersList.orderBy.field : usersList.orderBy.desc track by $index" user="user">
+  </user-item>
 </div>

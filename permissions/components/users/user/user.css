@@ -1,6 +1,6 @@
 .user-list-item {
   margin: 0.5rem 0;
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   padding: 0 2rem;
 }
 
@@ -15,4 +15,8 @@
 
 .user-list-item .edit-user-permissions {
   margin: 2rem 0;
+}
+
+.user-list-item.is-user-inactive {
+  background: #eee;
 }

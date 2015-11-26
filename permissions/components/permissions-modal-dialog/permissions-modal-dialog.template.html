@@ -9,18 +9,46 @@
       </div>
       <div class="modal-body">
         <form name="permissionsModalDialog.permissionsForm">
-          <div class="form-group" ng-repeat="permission in permissionsModalDialog.user.permissions"            
+          <div ng-if="permissionsModalDialog.isNewUser" class="user-data-block">
+            <div class="form-group"
+              ng-class="{'has-error': permissionsModalDialog.permissionsForm.$dirty && permissionsModalDialog.permissionsForm.firstname.$invalid}">
+              <label>
+                  Firstname
+                <input
+                  type="text"
+                  name="firstname"
+                  class="form-control"
+                  required
+                  ng-model="permissionsModalDialog.user.firstname"
+                  ng-model-options="{debounce: 300}">
+              </label>
+            </div>
+            <div class="form-group"
+              ng-class="{'has-error': permissionsModalDialog.permissionsForm.$dirty && permissionsModalDialog.permissionsForm.lastname.$invalid}">
+              <label>
+                Lastname
+                <input
+                  type="text"
+                  name="lastname"
+                  class="form-control"
+                  required
+                  ng-model="permissionsModalDialog.user.lastname"
+                  ng-model-options="{debounce: 300}">
+              </label>
+            </div>
+          </div>
+          <div class="form-group" ng-repeat="permission in permissionsModalDialog.user.permissions"
             <label>{{::permission.name}}</label>
-            <select class="form-control" multiple                 
+            <select class="form-control" multiple
               ng-model="permission.areas"
               ng-options="area.name for area in permissionsModalDialog.areas track by area.id"
             ></select>
-          </div>                      
+          </div>
         </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="permissionsModalDialog.saveUserData()">Save</button>
+        <button type="button" class="btn btn-primary" ng-click="permissionsModalDialog.saveUser()">Save</button>
       </div>
     </div>
   </div>

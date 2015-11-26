@@ -11,8 +11,8 @@ permissionsModalDialogDirective.$inject = ['$compile'];
           restrict: 'EA',
           scope: {
               modalTitle: '@',
-              user: '='
-            },            
+              user: '=?'
+            },
             controller: 'permissionsModalDialogCtrl',
             controllerAs: 'permissionsModalDialog',
             bindToController: true,
@@ -22,8 +22,17 @@ permissionsModalDialogDirective.$inject = ['$compile'];
     /////////////////////////////////////////////
 
     function link($scope, $el, $attr) {
+      var $modalDialog;
 
       $el.on('click', showModal);
+
+      $scope.$on('validFormData', function() {
+        $modalDialog.modal('hide');
+      });
+
+      $scope.$on('invalidFormData', function() {
+        $scope.permissionsModalDialog.permissionsForm.$dirty = true;
+      });
 
       $scope.$on('$destroy', function() {
         $el.off('click', showModal);
@@ -34,7 +43,7 @@ permissionsModalDialogDirective.$inject = ['$compile'];
       function showModal() {
         $('<div></div>')
           .load('/permissions/components/permissions-modal-dialog/permissions-modal-dialog.template.html', function(modalDialog) {
-            var $modalDialog = $($compile(modalDialog)($scope));
+            $modalDialog = $($compile(modalDialog)($scope));
 
             $modalDialog.modal({
               backdrop: false

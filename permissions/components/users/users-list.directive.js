@@ -8,13 +8,13 @@
     return {
           restrict: 'E',
           scope: {
-              users: '='
-            },
-            controller: 'usersCtrl',
-            controllerAs: 'usersList',
-            templateUrl: 'permissions/components/users/users-list.template.html',
-            bindToController: true,
-            link: link
+            users: '='
+          },
+          controller: 'usersCtrl',
+          controllerAs: 'usersList',
+          templateUrl: 'permissions/components/users/users-list.template.html',
+          bindToController: true,
+          link: link
     };
 
     /////////////////////////////////////////////
