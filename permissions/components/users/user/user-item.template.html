@@ -11,7 +11,7 @@
     <h4>Permissions:</h4>
     <div class="panel panel-default">
       <div class="panel-body">
-        <span ng-repeat="permission in userItem.user.permissions track by $index">
+        <span ng-repeat="permission in userItem.user.permissions | filter : permission.active track by $index">
           <strong ng-if="permission.areas.length > 0">{{::permission.name}}:</strong>
           <span class="permissions-areas" ng-repeat="area in permission.areas">{{::area.name}}{{$last ? ';' : ','}}</span>
         </span>

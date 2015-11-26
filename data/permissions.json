@@ -2,56 +2,31 @@
   {
     "id": 1,
     "name": "CD Edit",
-    "active": true,
-    "areas": [
-      {
-        "id": 1,
-        "name": "XYZ"
-      },
-      {
-        "id": 2,
-        "name":"ABC"
-      }
-    ]
+    "active": true
   },
   {
     "id": 2,
     "name": "CD Create",
-    "active": false,
-    "areas": []
+    "active": false
   },
   {
     "id": 3,
     "name": "PRI Edit",
-    "active": false,
-    "areas": []
+    "active": false
   },
   {
     "id": 4,
     "name": "DPR Edit",
-    "active": true,
-    "areas": [
-      {
-        "id": 3,
-        "name":"DEF"
-      }
-    ]
+    "active": true
   },
   {
     "id": 5,
     "name": "EXEC Edit",
-    "active": true,
-    "areas": [
-      {
-        "id": 4,
-        "name": "all"
-      }
-    ]
+    "active": true
   },
   {
     "id": 6,
     "name": "OPER Edit",
-    "active": false,
-    "areas": []
+    "active": false
   }
 ]

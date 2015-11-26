@@ -22,12 +22,14 @@ function PermissionsModalDialogCtrl($scope, $q, usersService, permissionsService
   function cleanForm() {
     vm.user.firstname = '';
     vm.user.lastname = '';
+    //make a copy to avoid affect user permissions on list of all permisisons
+    vm.user.permissions = $.extend(true, [], vm.permissions);
   }
 
   function saveUser() {
     if (vm.permissionsForm.$valid) {
       $scope.$emit('validFormData');
-      usersService.saveUser(vm.user);
+      usersService.saveUser($.extend({}, vm.user));
       cleanForm();
     } else {
       $scope.$emit('invalidFormData');
@@ -41,7 +43,8 @@ function PermissionsModalDialogCtrl($scope, $q, usersService, permissionsService
     ]).then(function(response) {
       vm.permissions = response[0];
       if (!vm.user.permissions) {
-        vm.user.permissions = vm.permissions;
+        //make a copy to avoid affect user permissions on list of all permisisons
+        vm.user.permissions = $.extend(true, [], vm.permissions);
       }
       vm.areas = response[1];
     });
