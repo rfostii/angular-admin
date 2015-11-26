@@ -20,17 +20,13 @@ function PermissionsModalDialogCtrl($scope, $q, usersService, permissionsService
   /////////////////////////////////////////////
 
   function cleanForm() {
-    vm.user.firstname = '';
-    vm.user.lastname = '';
-    //make a copy to avoid affect user permissions on list of all permisisons
-    vm.user.permissions = $.extend(true, [], vm.permissions);
+    
   }
 
   function saveUser() {
     if (vm.permissionsForm.$valid) {
       $scope.$emit('validFormData');
-      usersService.saveUser($.extend({}, vm.user));
-      cleanForm();
+      usersService.saveUser($.extend(true, {}, vm.user));
     } else {
       $scope.$emit('invalidFormData');
     }

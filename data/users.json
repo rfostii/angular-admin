@@ -1,5 +1,6 @@
 [
   {
+    "id": 1,
     "firstname": "Ruslan",
     "lastname": "Fostii",
     "cai": "RFOS",
@@ -63,6 +64,7 @@
     ]
   },
   {
+    "id": 2,
     "firstname": "Oleg",
     "lastname": "Petrov",
     "cai": "OPET",

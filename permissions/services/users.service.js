@@ -26,9 +26,20 @@
       });
     }
 
-    function saveUser(user) {
-      if (userService.users.indexOf(user) === -1) {
-          userService.users.push(user);
+    function saveUser(userData) {
+      var userIndex;
+
+      userService.users.some(function(userItem, index) {
+        if (userItem.id === userData.id) {
+          userIndex = index;
+          return true;
+        }
+      });
+
+      if (typeof userIndex === 'undefined') {
+          userService.users.push(userData);
+      } else {
+        userService.users.splice(userIndex, 1, userData);
       }
     }
   }
