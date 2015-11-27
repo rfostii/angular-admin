@@ -9,25 +9,19 @@
   function UsersCtrl($scope, $filter, usersService) {
     var vm = this;
 
-    vm.filterQuery = '';
-    vm.orderBy = '';
+    vm.searchQuery = '';
+    vm.sortInReverseMode = false;
+    vm.fields = ['firstname', 'lastname', 'cai', 'active'];
+    vm.selectedField = vm.fields[0];
     vm.users = usersService.users;
     vm.getListOfUsers = getListOfUsers;
-
-    $scope.$on('searchUser', function(event, query) {
-      vm.filterQuery = query;
-    });
-
-    $scope.$on('orderUsers', function(event, orderBy) {
-      vm.orderBy = orderBy;
-    });
 
     init();
 
     /////////////////////////////////////
 
     function getListOfUsers() {
-        return $filter('usersListFilter')(vm.users, vm.filterQuery);
+        return $filter('usersListFilter')(vm.users, vm.searchQuery);
     }
 
     function init() {

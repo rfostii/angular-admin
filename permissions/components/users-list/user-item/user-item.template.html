@@ -9,16 +9,18 @@
   </div>
   <div class="list-group-item-text row">
     <h4>Permissions:</h4>
-    <div class="panel panel-default">
-      <div class="panel-body">
+    <div class="user-permissions-block row">
+      <div class="col-md-9">
         <span ng-repeat="permission in userItem.user.permissions | filter : permission.active track by $index">
           <strong ng-if="permission.areas.length > 0">{{::permission.name}}:</strong>
           <span class="permissions-areas" ng-repeat="area in permission.areas">{{::area.name}}{{$last ? ';' : ','}}</span>
         </span>
       </div>
+      <div class="col-md-3">
+        <a href="#" class="edit-user-permissions right"
+          modal-title="Edit User Permission"
+          permissions-modal-dialog user="userItem.user">Edit permissions</a>
+      </div>
     </div>
-    <a href="#" class="edit-user-permissions"
-      modal-title="Edit User Permission"
-      permissions-modal-dialog user="userItem.user">Edit permissions</a>
   </div>
 </div>

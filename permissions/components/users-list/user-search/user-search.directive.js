@@ -7,7 +7,9 @@
   function userSearchDirective() {
     return {
       restrict: 'EA',
-      scope: {},
+      scope: {
+        searchQuery: '='
+      },
       template: '<input type="text" ng-model="userSearch.searchQuery" ng-model-options="{debounce: 300}" class="form-control" placeholder="search">',
       controller: 'userSearchCtrl',
       controllerAs: 'userSearch',

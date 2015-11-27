@@ -13,8 +13,10 @@
   font-style: oblique;
 }
 
-.user-list-item .edit-user-permissions {
-  margin: 2rem 0;
+.user-list-item .row .user-permissions-block {
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  padding: 1rem;
 }
 
 .user-list-item.is-user-inactive {

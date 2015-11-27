@@ -10,6 +10,9 @@
 				width: 40%;
 				margin: 2rem auto;
 			}
+			.left {
+				float: left;
+			}
 			.right {
 				float: right;
 			}
@@ -20,22 +23,7 @@
 		<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 	</head>
 	<body>
-		<div id="app">
-			<div class="panel panel-default">
-			  <div class="panel-body">
-					<div class="row">
-						<div class="col-md-4">
-							<button class="btn btn-default" permissions-modal-dialog modal-title="Add User">Add User</button>
-						</div>
-						<div class="col-md-4">
-							<order-users></order-users>
-						</div>
-						<div class="col-md-4">
-							<user-search></user-search>
-						</div>
-					</div>
-			  </div>
-			</div>
+		<div id="app">			
 			<users-list users="users"></users-list>
 		</div>
 		<script type="text/javascript" src="/dist/bundle.js"></script>

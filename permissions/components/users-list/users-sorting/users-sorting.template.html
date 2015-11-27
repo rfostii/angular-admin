@@ -1,0 +1,15 @@
+<button type="button" class="btn btn-default users-order-button" ng-click="usersSorting.changeReverseMode()">
+  <span class="glyphicon glyphicon-arrow-down" ng-if="!usersSorting.sortInReverseMode"></span>
+  <span class="glyphicon glyphicon-arrow-up" ng-if="usersSorting.sortInReverseMode"></span>
+</button>
+<div class="dropdown right">
+  <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    {{usersSorting.selectedField}}
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu">
+    <li ng-repeat="field in usersSorting.fields">
+      <a href="#" ng-click="usersSorting.selectField(field)">{{::field}}</a>
+    </li>
+  </ul>
+</div>
