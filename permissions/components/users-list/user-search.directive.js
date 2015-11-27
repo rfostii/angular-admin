@@ -10,10 +10,7 @@
       scope: {
         searchQuery: '='
       },
-      template: '<input type="text" ng-model="userSearch.searchQuery" ng-model-options="{debounce: 300}" class="form-control" placeholder="search">',
-      controller: 'userSearchCtrl',
-      controllerAs: 'userSearch',
-      bindToController: true,
+      template: '<input type="text" ng-model="searchQuery" ng-model-options="{debounce: 300}" class="form-control" placeholder="search">',
       link: link
     };
 
