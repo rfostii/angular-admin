@@ -26,20 +26,13 @@
       });
     }
 
-    function saveUser(userData) {
-      var userIndex;
-
-      userService.users.some(function(userItem, index) {
-        if (userItem.id === userData.id) {
-          userIndex = index;
-          return true;
-        }
-      });
-
-      if (typeof userIndex === 'undefined') {
-          userService.users.push(userData);
-      } else {
-        userService.users.splice(userIndex, 1, userData);
+    function saveUser(user) {
+      //if user is new
+      if (!user.id) {
+          //TODO: save on the server
+          user.id = Math.random();
+          user.cai = (user.firstname[0] + user.lastname.slice(0, 2)).toUpperCase();
+          userService.users.push(user);
       }
     }
   }

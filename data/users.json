@@ -10,16 +10,7 @@
         "id": 1,
         "name": "CD Edit",
         "active": true,
-        "areas": [
-          {
-            "id": 1,
-            "name": "XYZ"
-          },
-          {
-            "id": 2,
-            "name":"ABC"
-          }
-        ]
+        "areas": []
       },
       {
         "id": 2,
@@ -31,7 +22,12 @@
         "id": 3,
         "name": "PRI Edit",
         "active": false,
-        "areas": []
+        "areas": [
+          {
+            "id": 2,
+            "name":"ABC"
+          }
+        ]
       },
       {
         "id": 4,
@@ -78,10 +74,6 @@
           {
             "id": 1,
             "name": "XYZ"
-          },
-          {
-            "id": 2,
-            "name":"ABC"
           }
         ]
       },
