@@ -1,0 +1,58 @@
+<!-- Modal -->
+<div class="modal-backdrop in"></div>
+<div class="modal fade user-modal-dialog" tabindex="-1" role="dialog" aria-labelledby="user-modal-dialog-label">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" >{{::userModalDialog.modalTitle}}</h4>
+      </div>
+      <div class="modal-body">
+        <form name="userModalDialog.permissionsForm">
+          <div ng-if="userModalDialog.isNewUser" class="user-data-block">
+            <div class="form-group"
+              ng-class="{'has-error': userModalDialog.permissionsForm.$dirty && userModalDialog.permissionsForm.cai.$invalid}">
+              <label>
+                CAI
+                <input
+                  type="text"
+                  name="cai"
+                  class="form-control"
+                  required
+                  ng-model="userModalDialog.user.cai"
+                  ng-model-options="{debounce: 300}">
+              </label>
+            </div>
+            <div class="form-group">
+              <label class="width100">
+                  Full Name
+                <input
+                  type="text"
+                  name="fullname"
+                  class="form-control"
+                  readonly
+                  ng-model="userModalDialog.user.fullname">
+              </label>
+            </div>
+          </div>
+            <ul>
+              <li class="user-permissions-list" ng-repeat="permission in userModalDialog.user.permissions track by permission.id">
+                <label>{{::permission.name}}</label>
+                <ul>
+                  <li ng-repeat="area in userModalDialog.areas track by area.id">
+                    <input type="checkbox" ng-model="area.selected" ng-change="userModalDialog.addArea(permission, area)">
+                    {{::area.name}}
+                  </li>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" ng-click="userModalDialog.saveUser()">Save</button>
+      </div>
+    </div>
+  </div>
+</div>

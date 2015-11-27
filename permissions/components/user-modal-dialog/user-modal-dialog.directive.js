@@ -2,19 +2,19 @@
   'use strict';
 
   angular.module('admin.permissions')
-    .directive('permissionsModalDialog', permissionsModalDialogDirective);
+    .directive('userModalDialog', userModalDialogDirective);
 
-permissionsModalDialogDirective.$inject = ['$compile'];
+userModalDialogDirective.$inject = ['$compile'];
 
-  function permissionsModalDialogDirective($compile) {
+  function userModalDialogDirective($compile) {
     return {
           restrict: 'EA',
           scope: {
               modalTitle: '@',
               user: '=?'
             },
-            controller: 'permissionsModalDialogCtrl',
-            controllerAs: 'permissionsModalDialog',
+            controller: 'userModalDialogCtrl',
+            controllerAs: 'userModalDialog',
             bindToController: true,
             link: link
     };
@@ -31,7 +31,7 @@ permissionsModalDialogDirective.$inject = ['$compile'];
       });
 
       $scope.$on('invalidFormData', function() {
-        $scope.permissionsModalDialog.permissionsForm.$dirty = true;
+        $scope.userModalDialog.permissionsForm.$dirty = true;
       });
 
       $scope.$on('$destroy', function() {
@@ -42,7 +42,7 @@ permissionsModalDialogDirective.$inject = ['$compile'];
 
       function showModal() {
         $('<div></div>')
-          .load('/permissions/components/permissions-modal-dialog/permissions-modal-dialog.template.html', function(modalDialog) {
+          .load('/permissions/components/user-modal-dialog/user-modal-dialog.template.html', function(modalDialog) {
             $modalDialog = $($compile(modalDialog)($scope));
 
             $modalDialog.modal({

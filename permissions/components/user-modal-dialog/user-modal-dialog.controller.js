@@ -2,12 +2,12 @@
   'use strict';
 
   angular.module('admin.permissions')
-    .controller('permissionsModalDialogCtrl', PermissionsModalDialogCtrl);
+    .controller('userModalDialogCtrl', UserModalDialogCtrl);
 })();
 
-PermissionsModalDialogCtrl.$inject = ['$scope', '$q', 'usersService', 'permissionsService'];
+UserModalDialogCtrl.$inject = ['$scope', '$q', 'usersService', 'permissionsService'];
 
-function PermissionsModalDialogCtrl($scope, $q, usersService, permissionsService) {
+function UserModalDialogCtrl($scope, $q, usersService, permissionsService) {
   var vm = this;
 
   if (!vm.user) {
@@ -15,6 +15,7 @@ function PermissionsModalDialogCtrl($scope, $q, usersService, permissionsService
     vm.isNewUser = true;
   }
   vm.saveUser = saveUser;
+  vm.addArea = addArea;
 
   init();
   /////////////////////////////////////////////
@@ -34,6 +35,10 @@ function PermissionsModalDialogCtrl($scope, $q, usersService, permissionsService
     } else {
       $scope.$emit('invalidFormData');
     }
+  }
+
+  function addArea() {
+    
   }
 
   function init() {

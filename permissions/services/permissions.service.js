@@ -11,7 +11,7 @@
       permissions: [],
       areas: [],
       fetchPermissions: fetchPermissions,
-      savePermissions: savePermissions,
+      savePermission: savePermission,
       fetchAreas: fetchAreas
     };
 
@@ -35,9 +35,10 @@
       });
     }
 
-    function savePermissions(permission) {
-      if (permissionsService.permissions.indexOf(permissions) === -1) {
-          permissionsService.permissions.push(permissions);
+    function savePermission(permission) {
+      if (permissionsService.permissions.indexOf(permission) === -1) {
+          permission.id = Math.random();
+          permissionsService.permissions.push(permission);
       }
     }
   }
