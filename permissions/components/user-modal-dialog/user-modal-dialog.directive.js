@@ -4,9 +4,9 @@
   angular.module('admin.permissions')
     .directive('userModalDialog', userModalDialogDirective);
 
-userModalDialogDirective.$inject = ['$compile'];
+userModalDialogDirective.$inject = ['$compile', '$http'];
 
-  function userModalDialogDirective($compile) {
+  function userModalDialogDirective($compile, $http) {
     return {
           restrict: 'EA',
           scope: {
@@ -41,17 +41,15 @@ userModalDialogDirective.$inject = ['$compile'];
       /////////////////////////////////////////////////////
 
       function showModal() {
-        $('<div></div>')
-          .load('/permissions/components/user-modal-dialog/user-modal-dialog.template.html', function(modalDialog) {
-            $modalDialog = $($compile(modalDialog)($scope));
+        $http.get('/permissions/components/user-modal-dialog/user-modal-dialog.template.html')
+          .then(function(response) {
+            $modalDialog = $($compile(response.data)($scope));
 
-            $modalDialog.modal({
-              backdrop: false
-            });
+            $modalDialog.modal();
 
             $modalDialog.one('hidden.bs.modal', function() {
               $modalDialog.remove();
-            })
+            });
           });
       }
     }
