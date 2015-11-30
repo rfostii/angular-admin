@@ -11,7 +11,7 @@
 
     vm.searchQuery = '';
     vm.sortInReverseMode = false;
-    vm.fields = ['firstname', 'lastname', 'cai', 'active'];
+    vm.fields = ['name', 'cai', 'active'];
     vm.selectedField = vm.fields[0];
     vm.users = usersService.users;
     vm.getListOfUsers = getListOfUsers;

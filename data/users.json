@@ -1,8 +1,7 @@
 [
   {
     "id": 1,
-    "firstname": "Ruslan",
-    "lastname": "Fostii",
+    "name": "Ruslan Fostii",
     "cai": "RFOS",
     "active": true,
     "permissions": [
@@ -61,8 +60,7 @@
   },
   {
     "id": 2,
-    "firstname": "Oleg",
-    "lastname": "Petrov",
+    "name": "Oleg Petrov",    
     "cai": "OPET",
     "active": true,
     "permissions": [

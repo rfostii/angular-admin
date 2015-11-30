@@ -21,8 +21,7 @@
       return function(users, query) {
         var regex = new RegExp(query, 'gi');
         return users.filter(function(user) {
-          return regex.test(user.firstname) ||
-                 regex.test(user.lastname) ||
+          return regex.test(user.name) ||                 
                  regex.test(user.cai) ||
                  isPemissionsMatch(user.permissions, regex);
         });

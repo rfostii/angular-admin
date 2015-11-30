@@ -5,12 +5,13 @@
     .factory('usersService', UsersService);
 
 
-  UsersService.$inject = ['$http'];
+  UsersService.$inject = ['$http', '$q'];
 
-  function UsersService($http) {
+  function UsersService($http, $q) {
     var userService = {
       users: [],
       fetchUsers: fetchUsers,
+      lookupInActiveDirectory: lookupInActiveDirectory,
       saveUser: saveUser
     };
 
@@ -26,12 +27,21 @@
       });
     }
 
+    function lookupInActiveDirectory(cai) {
+      var dfr = $q.defer();
+
+      setTimeout(function() {
+        dfr.resolve('Petro Petrovych');
+      }, 1000);
+
+      return dfr.promise;
+    }
+
     function saveUser(user) {
       //if user is new
       if (!user.id) {
           //TODO: save on the server
           user.id = Math.random();
-          user.cai = (user.firstname[0] + user.lastname.slice(0, 2)).toUpperCase();
           userService.users.push(user);
       }
     }

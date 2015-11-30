@@ -13,7 +13,7 @@
             <div class="form-group"
               ng-class="{'has-error': userModalDialog.permissionsForm.$dirty && userModalDialog.permissionsForm.cai.$invalid}">
               <label>
-                CAI
+                *CAI
                 <input
                   type="text"
                   name="cai"
@@ -24,23 +24,28 @@
               </label>
             </div>
             <div class="form-group">
-              <label class="width100">
-                  Full Name
+              <label class="width50">
+                Name
                 <input
                   type="text"
-                  name="fullname"
+                  name="name"
                   class="form-control"
                   readonly
-                  ng-model="userModalDialog.user.fullname">
+                  ng-model="userModalDialog.user.name">
               </label>
+              <button type="button" class="btn btn-primary"
+                ng-click="userModalDialog.lookupInActiveDirectory(userModalDialog.user.cai)">Lookup in active directory</button>
             </div>
           </div>
             <ul>
-              <li class="user-permissions-list" ng-repeat="permission in userModalDialog.user.permissions track by permission.id">
+              <li class="user-permissions-list" ng-repeat="permission in userModalDialog.user.permissions">
                 <label>{{::permission.name}}</label>
                 <ul>
-                  <li ng-repeat="area in userModalDialog.areas track by area.id">
-                    <input type="checkbox" ng-model="area.selected" ng-change="userModalDialog.addArea(permission, area)">
+                  <li ng-repeat="area in userModalDialog.areas">
+                    <input
+                      type="checkbox"
+                      checklist-model="permission.areas"
+                      checklist-value="area">
                     {{::area.name}}
                   </li>
                   </li>
