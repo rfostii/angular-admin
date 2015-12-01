@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  angular.module('admin.permissions')
+  angular.module('admin.permissions.components.userModalDialog.userModalDialogDirective', [])
     .directive('userModalDialog', userModalDialogDirective);
 
   userModalDialogDirective.$inject = ['$compile', '$http'];
@@ -13,7 +13,7 @@
               modalTitle: '@',
               user: '=?'
             },
-            controller: 'userModalDialogCtrl',
+            controller: 'userModalDialogController',
             controllerAs: 'userModalDialog',
             bindToController: true,
             link: link

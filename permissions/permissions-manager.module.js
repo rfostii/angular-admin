@@ -1,7 +1,12 @@
 (function() {
   'use strict';
 
-  angular.module('admin.permissions', ['ngMockE2E', 'admin.permissions.common']).run(runPermissionsModule);
+  angular.module('admin.permissions', [
+      'ngMockE2E',
+      'admin.permissions.common.directives.checklistModel',
+      'admin.permissions.components.usersList'
+    ])
+    .run(runPermissionsModule);
 
   runPermissionsModule.$inject = ['$httpBackend', '$http'];
 

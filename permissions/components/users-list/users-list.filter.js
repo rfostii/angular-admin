@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  angular.module('admin.permissions')
+  angular.module('admin.permissions.components.usersList.usersListFilter', [])
     .filter('usersListFilter', usersListFilter);
 
     function usersListFilter() {
@@ -21,7 +21,7 @@
       return function(users, query) {
         var regex = new RegExp(query, 'gi');
         return users.filter(function(user) {
-          return regex.test(user.name) ||                 
+          return regex.test(user.name) ||
                  regex.test(user.cai) ||
                  isPemissionsMatch(user.permissions, regex);
         });

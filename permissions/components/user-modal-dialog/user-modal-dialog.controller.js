@@ -1,12 +1,12 @@
 (function() {
   'use strict';
 
-  angular.module('admin.permissions')
-    .controller('userModalDialogCtrl', UserModalDialogCtrl);
+  angular.module('admin.permissions.components.userModalDialog.userModalDialogController', [])
+    .controller('userModalDialogController', UserModalDialogController);
 
-    UserModalDialogCtrl.$inject = ['$scope', '$q', 'usersService', 'permissionsService'];
+    UserModalDialogController.$inject = ['$scope', '$q', 'usersService', 'permissionsService'];
 
-    function UserModalDialogCtrl($scope, $q, usersService, permissionsService) {
+    function UserModalDialogController($scope, $q, usersService, permissionsService) {
       var vm = this;
       var selectedPemissionsAreas = [];
 

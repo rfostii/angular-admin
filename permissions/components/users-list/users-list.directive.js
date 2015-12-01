@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  angular.module('admin.permissions')
+  angular.module('admin.permissions.components.usersList.userListDirective', [])
     .directive('usersList', userListDirective);
 
   function userListDirective() {
@@ -10,7 +10,7 @@
           scope: {
             users: '='
           },
-          controller: 'usersCtrl',
+          controller: 'usersController',
           controllerAs: 'usersList',
           templateUrl: 'permissions/components/users-list/users-list.template.html',
           bindToController: true,

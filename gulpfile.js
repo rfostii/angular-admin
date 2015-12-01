@@ -7,9 +7,9 @@ var sourcemaps = require('gulp-sourcemaps');
 gulp.task('build', function() {
   return gulp.src([
       './permissions/common/*.js',
-      './permissions/*.js',
+      './permissions/services/**/*.js',
       './permissions/components/**/*.js',
-      './permissions/services/**/*.js'
+      './permissions/*.js',
     ])
     .pipe(sourcemaps.init())
     .pipe(concat('bundle.js'))

@@ -1,12 +1,12 @@
 (function() {
   'use strict';
 
-  angular.module('admin.permissions')
-    .controller('userItemCtrl', UserItemCtrl);
+  angular.module('admin.permissions.components.usersList.userItem.userItemController', [])
+    .controller('userItemController', UserItemController);
 
-  UserItemCtrl.$inject = ['usersService'];
+  UserItemController.$inject = ['usersService'];
 
-  function UserItemCtrl(usersService) {
+  function UserItemController(usersService) {
     var vm = this;
 
     vm.showListOfAllowedFactories = showListOfAllowedFactories;
@@ -18,7 +18,7 @@
     function saveUser(user) {
       usersService.saveUser(user).then(function(user) {
         vm.user = user;
-      })
+      });
     }
 
     function showListOfAllowedFactories() {
