@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  angular.module('admin.permissions.services.usersService', [])
+  angular.module('usersService', [])
     .factory('usersService', UsersService);
 
 

@@ -1,12 +1,12 @@
 (function() {
   'use strict';
 
-  angular.module('admin.permissions.components.usersList.usersController', [])
-    .controller('usersController', UsersController);
+  angular.module('usersList')
+    .controller('usersCtrl', UsersCtrl);
 
-  UsersController.$inject = ['$scope', '$filter','usersService'];
+  UsersCtrl.$inject = ['$scope', '$filter','usersService'];
 
-  function UsersController($scope, $filter, usersService) {
+  function UsersCtrl($scope, $filter, usersService) {
     var vm = this;
 
     vm.searchQuery = '';

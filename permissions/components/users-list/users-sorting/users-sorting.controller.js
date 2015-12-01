@@ -1,12 +1,12 @@
 (function() {
   'use strict';
 
-  angular.module('admin.permissions.components.usersList.usersSorting.usersSortingController', [])
-    .controller('usersSortingController', UsersSortingController);
+  angular.module('usersSorting')
+    .controller('usersSortingCtrl', UsersSortingCtrl);
 
-  UsersSortingController.$inject = ['$scope'];
+  UsersSortingCtrl.$inject = ['$scope'];
 
-  function UsersSortingController($scope) {
+  function UsersSortingCtrl($scope) {
     var vm = this;
 
     vm.selectField = selectField

@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  angular.module('admin.permissions.components.usersList.usersListFilter', [])
+  angular.module('usersList')
     .filter('usersListFilter', usersListFilter);
 
     function usersListFilter() {

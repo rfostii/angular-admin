@@ -1,12 +1,12 @@
 (function() {
   'use strict';
 
-  angular.module('admin.permissions.components.usersList.userItem.userItemController', [])
-    .controller('userItemController', UserItemController);
+  angular.module('userItem')
+    .controller('userItemCtrl', UserItemCtrl);
 
-  UserItemController.$inject = ['usersService'];
+  UserItemCtrl.$inject = ['usersService'];
 
-  function UserItemController(usersService) {
+  function UserItemCtrl(usersService) {
     var vm = this;
 
     vm.showListOfAllowedFactories = showListOfAllowedFactories;

@@ -3,8 +3,7 @@
 
   angular.module('admin.permissions', [
       'ngMockE2E',
-      'admin.permissions.common.directives.checklistModel',
-      'admin.permissions.components.usersList'
+      'admin.permissions.common.directives.checklistModel'
     ])
     .run(runPermissionsModule);
 
