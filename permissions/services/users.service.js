@@ -20,29 +20,29 @@
     ///////////////////////////////////////////
 
     function fetchUsers() {
-      //TODO: fetch real data from server using $http service or $resource
-      return $http.get('/data/users.json').then(function(response) {
+      return $http.get('/users').then(function(response) {
         userService.users = response.data;
         return response.data;
       });
     }
 
     function lookupInActiveDirectory(cai) {
-      var dfr = $q.defer();
-
-      setTimeout(function() {
-        dfr.resolve('Petro Petrovych');
-      }, 1000);
-
-      return dfr.promise;
+      return $http.post('/lookupInActiveDirectory', { cai: cai }).then(function(response) {
+        return response.data;
+      });
     }
 
     function saveUser(user) {
       //if user is new
       if (!user.id) {
-          //TODO: save on the server
-          user.id = Math.random();
-          userService.users.push(user);
+          return $http.post('/users', user).then(function(response) {
+            userService.users.push(response.data);
+            return response.data;
+          })
+      } else {
+        return $http.put('/users/' + user.id, user).then(function(response) {
+          return response.data;
+        });
       }
     }
   }

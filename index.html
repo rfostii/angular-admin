@@ -4,13 +4,11 @@
 		<meta charset="utf-8">
 		<title></title>
 		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-		<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
-		<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
-		<link href='https://fonts.googleapis.com/css?family=Roboto:400,400italic,500,700' rel='stylesheet' type='text/css'>
-		<link href='https://fonts.googleapis.com/css?family=Asap:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 		<link href='https://fonts.googleapis.com/css?family=Nunito:400,700,300' rel='stylesheet' type='text/css'>
-		<link href='https://fonts.googleapis.com/css?family=Nobile:400,700,400italic' rel='stylesheet' type='text/css'>
 		<style>
+			body {
+				font-family: 'Nunito', sans-serif;
+			}
 			#app {
 				position: relative;
 				width: 30%;
@@ -29,28 +27,15 @@
 		</style>
 		<link rel="stylesheet" href="/dist/style.css">
 		<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+		<script type="text/javascript" src="bower_components/angular-mock.js"></script>
 		<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
 		<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 	</head>
 	<body>
-		<select class="fonts">
-			<option value="">Default</option>
-			<option value="Roboto">Roboto</option>
-			<option value="Arimo">Arimo</option>
-			<option value="Montserrat">Montserrat</option>
-			<option value="Asap">Asap</option>
-			<option value="Nunito">Nunito</option>
-			<option value="Nobile">Nobile</option>
-		</select>
 		<div id="app">
 			<users-list users="users"></users-list>
 		</div>
 		<script type="text/javascript" src="/dist/bundle.js"></script>
-		<script type="text/javascript">
-			document.querySelector('.fonts').addEventListener('change', function(event) {
-				document.body.style.fontFamily = event.target.value;
-			});
-		</script>
 		<script type="text/javascript">
 			angular.module('admin', ['admin.permissions']);
 			angular.bootstrap(document.getElementById('app'), ['admin']);

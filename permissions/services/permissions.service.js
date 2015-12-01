@@ -21,7 +21,7 @@
 
     function fetchPermissions() {
       //TODO: fetch real data from server using $http service or $resource
-      return $http.get('/data/permissions.json').then(function(response) {
+      return $http.get('/permissions').then(function(response) {
         permissionsService.permissions = response.data;
         return response.data;
       });
@@ -29,7 +29,7 @@
 
     function fetchAreas() {
       //TODO: fetch real data from server using $http service or $resource
-      return $http.get('/data/areas.json').then(function(response) {
+      return $http.get('/areas').then(function(response) {
         permissionsService.areas = response.data;
         return response.data;
       });

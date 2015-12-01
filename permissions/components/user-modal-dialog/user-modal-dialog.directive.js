@@ -4,7 +4,7 @@
   angular.module('admin.permissions')
     .directive('userModalDialog', userModalDialogDirective);
 
-userModalDialogDirective.$inject = ['$compile', '$http'];
+  userModalDialogDirective.$inject = ['$compile', '$http'];
 
   function userModalDialogDirective($compile, $http) {
     return {

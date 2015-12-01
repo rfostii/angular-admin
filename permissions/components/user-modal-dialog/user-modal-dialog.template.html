@@ -31,7 +31,7 @@
                   readonly
                   ng-model="userModalDialog.user.name">
               </label>
-              <button type="button" class="btn btn-primary"
+              <button type="button" class="btn btn-primary lookup-in-active-directory"
                 ng-click="userModalDialog.lookupInActiveDirectory(userModalDialog.user.cai)">Lookup in active directory</button>
             </div>
           </div>
@@ -46,7 +46,6 @@
                       checklist-value="area">
                     {{::area.name}}
                   </li>
-                  </li>
                 </ul>
               </li>
             </ul>
@@ -54,7 +53,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" ng-click="userModalDialog.saveUser()">Save</button>
+        <button type="button" class="btn btn-primary save" ng-click="userModalDialog.saveUser()">Save</button>
       </div>
     </div>
   </div>
