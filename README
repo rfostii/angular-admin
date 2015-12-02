@@ -12,10 +12,10 @@ gulp dev
 run unit tests
 #############################
 
-gulp tdd
+gulp test
 
 #############################
 run e2e
 #############################
-cd e2e_tests
+cd e2e-tests
 protractor protractor.conf.js
