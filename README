@@ -2,9 +2,7 @@
 setup project
 #############################
 
-npm i grunt -g
-npm i karma -g
-npm i bower -g
+npm i gulp karma bower -g
 npm i
 bower install
 webdriver-manager start
