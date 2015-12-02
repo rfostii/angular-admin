@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  angular.module('permissionsService', [])
+  angular.module('admin.permissions.services.permissionsService', [])
     .factory('permissionsService', PermissionsService);
 
   PermissionsService.$inject = ['$http'];

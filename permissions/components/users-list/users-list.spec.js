@@ -40,8 +40,8 @@ describe('users-list test::', function() {
     { id: 6, name: 'OPER Edit', active: false }
   ];
 
-  beforeEach(module('usersService'));
-  beforeEach(module('usersList'));
+  beforeEach(module('admin.permissions.services.usersService'));
+  beforeEach(module('admin.permissions.usersList'));
   beforeEach(module('admin.permissions.templates'));
 
   beforeEach(inject(function($injector) {

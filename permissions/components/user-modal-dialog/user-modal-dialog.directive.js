@@ -1,8 +1,9 @@
 (function() {
   'use strict';
 
-  angular.module('userModalDialog')
-    .directive('userModalDialog', userModalDialogDirective);
+  angular.module('admin.permissions.userModalDialog.userModalDialogDirective', [
+    'admin.permissions.userModalDialog.userModalDialogCtrl'
+  ]).directive('userModalDialog', userModalDialogDirective);
 
   userModalDialogDirective.$inject = ['$compile', '$http', '$templateCache'];
 

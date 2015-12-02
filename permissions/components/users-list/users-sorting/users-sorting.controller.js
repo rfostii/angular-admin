@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  angular.module('usersSorting')
+  angular.module('admin.permissions.usersSorting.usersSortingCtrl', [])
     .controller('usersSortingCtrl', UsersSortingCtrl);
 
   UsersSortingCtrl.$inject = ['$scope'];

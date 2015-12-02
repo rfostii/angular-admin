@@ -1,8 +1,9 @@
 (function() {
   'use strict';
 
-  angular.module('usersSorting')
-    .directive('usersSorting', usersSortingDirective);
+  angular.module('admin.permissions.usersSorting.usersSortingDirective', [
+    'admin.permissions.usersSorting.usersSortingCtrl'
+  ]).directive('usersSorting', usersSortingDirective);
 
   function usersSortingDirective() {
     return {

@@ -1,5 +1,8 @@
 (function() {
 	'use strict';
 
-	angular.module('usersSorting', []);
+	angular.module('admin.permissions.usersSorting', [
+		'admin.permissions.usersSorting.usersSortingDirective',
+    	'admin.permissions.usersSorting.usersSortingCtrl'
+	]);
 })();

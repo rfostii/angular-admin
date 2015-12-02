@@ -1,8 +1,9 @@
 (function() {
   'use strict';
 
-  angular.module('usersList')
-    .directive('usersList', userListDirective);
+  angular.module('admin.permissions.usersList.userListDirective', [
+    'admin.permissions.usersList.usersCtrl'
+  ]).directive('usersList', userListDirective);
 
   function userListDirective() {
     return {

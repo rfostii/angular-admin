@@ -3,9 +3,8 @@
 
   angular.module('admin.permissions', [
       'ngMockE2E',
-      'admin.permissions.templates',
-      'checklistModel',
-      'usersList'
+      'admin.permissions.templates',      
+      'admin.permissions.usersList'
     ])
     .run(runPermissionsModule);
 

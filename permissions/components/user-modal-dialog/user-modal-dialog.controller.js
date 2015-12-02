@@ -1,8 +1,10 @@
 (function() {
   'use strict';
 
-  angular.module('userModalDialog')
-    .controller('userModalDialogCtrl', UserModalDialogCtrl);
+  angular.module('admin.permissions.userModalDialog.userModalDialogCtrl', [
+    'admin.permissions.services.usersService',
+    'admin.permissions.services.permissionsService'
+  ]).controller('userModalDialogCtrl', UserModalDialogCtrl);
 
     UserModalDialogCtrl.$inject = ['$scope', '$q', 'usersService', 'permissionsService'];
 

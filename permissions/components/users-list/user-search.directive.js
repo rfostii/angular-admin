@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  angular.module('usersList')
+  angular.module('admin.permissions.usersList.userSearchDirective', [])
     .directive('userSearch', userSearchDirective);
 
   function userSearchDirective() {

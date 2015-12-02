@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  angular.module('checklistModel', [])
+  angular.module('admin.permissions.common.checklistModelDirective', [])
     .directive('checklistModel', ['$parse', '$compile', function($parse, $compile) {
 
       function contains(arr, item, comparator) {

@@ -1,7 +1,10 @@
 (function() {
   'use strict';
 
-  angular.module('usersList')
+  angular.module('admin.permissions.usersList.usersCtrl', [
+    'admin.permissions.usersList.filterUsersByQuery',
+    'admin.permissions.services.usersService'
+  ])
     .controller('usersCtrl', UsersCtrl);
 
   UsersCtrl.$inject = ['$scope', '$filter','usersService'];

@@ -1,8 +1,9 @@
 (function() {
   'use strict';
 
-  angular.module('userItem')
-    .controller('userItemCtrl', UserItemCtrl);
+  angular.module('admin.permissions.userItem.userItemCtrl', [
+    'admin.permissions.services.usersService'
+  ]).controller('userItemCtrl', UserItemCtrl);
 
   UserItemCtrl.$inject = ['usersService'];
 

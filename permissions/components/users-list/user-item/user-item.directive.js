@@ -2,8 +2,10 @@
 (function() {
   'use strict';
 
-  angular.module('userItem')
-    .directive('userItem', userItemDirective);
+  angular.module('admin.permissions.userItem.userItemDirective', [
+    'admin.permissions.userItem.userItemCtrl',
+    'admin.permissions.common.checklistModelDirective'
+  ]).directive('userItem', userItemDirective);
 
   function userItemDirective() {
     return {
