@@ -51,7 +51,9 @@
         if (vm.permissionsForm.$valid) {
           $scope.$emit('validFormData');
           usersService.saveUser($.extend(true, {}, vm.user)).then(function(user) {
-            vm.user = user;
+            if (!vm.isNewUser) {
+                vm.user = user;
+            }
           });
           cleanForm();
         } else {

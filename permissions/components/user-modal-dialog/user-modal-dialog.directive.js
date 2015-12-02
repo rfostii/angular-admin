@@ -4,9 +4,9 @@
   angular.module('userModalDialog')
     .directive('userModalDialog', userModalDialogDirective);
 
-  userModalDialogDirective.$inject = ['$compile', '$http'];
+  userModalDialogDirective.$inject = ['$compile', '$http', '$templateCache'];
 
-  function userModalDialogDirective($compile, $http) {
+  function userModalDialogDirective($compile, $http, $templateCache) {
     return {
           restrict: 'EA',
           scope: {
@@ -41,15 +41,13 @@
       /////////////////////////////////////////////////////
 
       function showModal() {
-        $http.get('/permissions/components/user-modal-dialog/user-modal-dialog.template.html')
-          .then(function(response) {
-            $modalDialog = $($compile(response.data)($scope));
+        var modalDialogTmpl =$templateCache
+          .get('components/user-modal-dialog/user-modal-dialog.template.html');
 
-            $modalDialog.modal();
-
-            $modalDialog.one('hidden.bs.modal', function() {
-              $modalDialog.remove();
-            });
+          $modalDialog = $($compile(modalDialogTmpl)($scope));
+          $modalDialog.modal();
+          $modalDialog.one('hidden.bs.modal', function() {
+            $modalDialog.remove();
           });
       }
     }

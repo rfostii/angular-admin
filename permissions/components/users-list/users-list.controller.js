@@ -21,7 +21,7 @@
     /////////////////////////////////////
 
     function getListOfUsers() {
-        return $filter('usersListFilter')(vm.users, vm.searchQuery);
+        return $filter('filterUsersByQuery')(vm.users, vm.searchQuery);
     }
 
     function init() {

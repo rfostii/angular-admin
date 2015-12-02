@@ -1,0 +1,23 @@
+#############################
+setup project
+#############################
+
+npm i grunt -g
+npm i karma -g
+npm i bower -g
+npm i
+bower install
+webdriver-manager start
+gulp dev
+
+#############################
+run unit tests
+#############################
+
+gulp tdd
+
+#############################
+run e2e
+#############################
+cd e2e_tests
+protractor protractor.conf.js

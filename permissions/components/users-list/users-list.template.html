@@ -19,6 +19,6 @@
 </div>
 <div class="list-group">
   <user-item
-    ng-repeat="user in usersList.getListOfUsers() | orderBy : usersList.selectedField : usersList.sortInReverseMode track by $index" user="user">
+    ng-repeat="user in usersList.getListOfUsers() | orderBy : usersList.selectedField : usersList.sortInReverseMode track by user.id" user="user">
   </user-item>
 </div>

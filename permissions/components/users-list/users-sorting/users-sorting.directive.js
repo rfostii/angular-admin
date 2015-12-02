@@ -14,7 +14,7 @@
           },
           controller: 'usersSortingCtrl',
           controllerAs: 'usersSorting',
-          templateUrl: 'permissions/components/users-list/users-sorting/users-sorting.template.html',
+          templateUrl: 'components/users-list/users-sorting/users-sorting.template.html',
           bindToController: true,
           link: link
     };

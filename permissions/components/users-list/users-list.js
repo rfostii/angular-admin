@@ -1,5 +1,11 @@
 (function() {
 	'use strict';
 
-	angular.module('usersList', []);
+	angular.module('usersList', [
+		'userModalDialog',
+		'userItem',
+		'usersSorting',
+		'usersService',
+		'permissionsService'
+	]);
 })();

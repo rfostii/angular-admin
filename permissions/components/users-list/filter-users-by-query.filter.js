@@ -2,9 +2,9 @@
   'use strict';
 
   angular.module('usersList')
-    .filter('usersListFilter', usersListFilter);
+    .filter('filterUsersByQuery', filterUsersByQueryFilter);
 
-    function usersListFilter() {
+    function filterUsersByQueryFilter() {
       function isPemissionsMatch(permissions, pattern) {
         return permissions.some(function(permission) {
           return permission.areas && permission.areas.length &&

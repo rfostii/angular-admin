@@ -3,7 +3,9 @@
 
   angular.module('admin.permissions', [
       'ngMockE2E',
-      'admin.permissions.common.directives.checklistModel'
+      'admin.permissions.templates',
+      'checklistModel',
+      'usersList'
     ])
     .run(runPermissionsModule);
 
@@ -25,7 +27,7 @@
       { id: 6, name: 'OPER Edit', active: false }
     ];
     var users = [
-      { id: 1, name: 'Ruslan Fostii', cai: 'RFOS', active: true, permissions: [
+      { id: 1, name: 'User1', cai: 'TUSER3', active: true, permissions: [
           { id: 1, name: 'CD Edit', active: true, areas: [] },
           { id: 2, name: 'CD Create', active: false, areas: [] },
           { id: 3, name: 'PRI Edit', active: false, areas: [
@@ -43,7 +45,7 @@
           { id: 6, name: 'OPER Edit', active: false, areas: [] }
         ]
       },
-      { id: 2, name: 'Oleg Petrov', cai: 'OPET', active: true, permissions: [
+      { id: 2, name: 'User2', cai: 'TUSER1', active: true, permissions: [
           { id: 1, name: 'CD Edit', active: true, areas: [
               { id: 1, name: 'XYZ' }
             ]
@@ -69,7 +71,7 @@
 
     $httpBackend.whenGET('/users').respond(users);
 
-    $httpBackend.whenPOST('/lookupInActiveDirectory').respond('Petro Petrovych');
+    $httpBackend.whenPOST('/lookupInActiveDirectory').respond('User3');
 
     $httpBackend.whenPOST('/users').respond(function(method, url, user) {
         user = JSON.parse(user);
