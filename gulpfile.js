@@ -67,8 +67,8 @@ gulp.task('build-templates', function () {
     return gulp.src('./permissions/**/*.template.html')
         .pipe(ngTemplates({
           standalone: true,
-          moduleName: 'admin.permissions.templates',
-          filePath: 'admin.permissions.templates.js'
+          module: 'admin.permissions.templates',
+          filename: 'admin.permissions.templates.js'
         }))
         .pipe(gulp.dest('./dist/'));
 });
