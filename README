@@ -1,6 +1,8 @@
 #############################
 setup project
 #############################
+git checkout -b develop
+git pull origin develop
 
 npm i gulp karma bower -g
 npm i
