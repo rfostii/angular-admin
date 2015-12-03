@@ -2,3 +2,9 @@
   display: inline-block;
   width: 50%;
 }
+
+.user-modal-dialog .lookup-in-active-directory {
+  position: absolute;
+  bottom: 0.6rem;
+  margin: 0 1rem;
+}
