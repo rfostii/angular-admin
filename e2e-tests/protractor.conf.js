@@ -10,7 +10,7 @@ exports.config = {
   // Framework to use. Jasmine is recommended.
   framework: 'jasmine',
 
-  rootElement: '#app',
+  rootElement: 'body',
 
   // Spec patterns are relative to the current working directly when
   // protractor is called.
