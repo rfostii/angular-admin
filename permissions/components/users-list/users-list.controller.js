@@ -18,10 +18,20 @@
     vm.selectedField = vm.fields[0];
     vm.users = usersService.users;
     vm.getListOfUsers = getListOfUsers;
+    vm.selectField = selectField
+    vm.changeReverseMode = changeReverseMode;
 
     init();
 
     /////////////////////////////////////
+
+    function changeReverseMode() {
+      vm.sortInReverseMode = !vm.sortInReverseMode;
+    }
+
+    function selectField(field) {
+        vm.selectedField = field;
+    }
 
     function getListOfUsers() {
         return $filter('filterUsersByQuery')(vm.users, vm.searchQuery);

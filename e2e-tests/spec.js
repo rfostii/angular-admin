@@ -27,7 +27,7 @@ describe('manage permissions page::', function() {
 
   it('should change order of users in list', function() {
     var usersSortingButton = element(by.css('.users-sorting-tool button.dropdown-toggle'));
-    var usersSortingFields = element.all(by.repeater('field in usersSorting.fields'));
+    var usersSortingFields = element.all(by.repeater('field in usersList.fields'));
     var userItems = element.all(by.css('user-item'));
 
     usersSortingButton.click();

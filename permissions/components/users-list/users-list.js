@@ -7,7 +7,6 @@
 		'admin.permissions.usersList.usersCtrl',
 		'admin.permissions.usersList.userListDirective',
 		'admin.permissions.userItem',
-		'admin.permissions.usersSorting',
 		'admin.permissions.userModalDialog'
 	]);
 })();

@@ -6,11 +6,23 @@
           <button class="btn btn-primary add-new-user" user-modal-dialog modal-title="Add User">Add User</button>
         </div>
         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-5">
-          <users-sorting
-            selected-field="usersList.selectedField"
-            fields="usersList.fields"
-            sort-in-reverse-mode="usersList.sortInReverseMode"
-            ></users-sorting>
+          <div class="users-sorting">
+            <div class="dropdown users-sorting-tool">
+              <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                Sort by {{usersList.selectedField}}
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu">
+                <li ng-repeat="field in usersList.fields">
+                  <a href="#" ng-click="usersList.selectField(field)">{{::field}}</a>
+                </li>
+              </ul>
+            </div>
+            <button type="button" class="btn btn-default users-sorting-tool users-order-button" ng-click="usersList.changeReverseMode()">
+              <span class="glyphicon glyphicon-arrow-down" ng-if="!usersList.sortInReverseMode"></span>
+              <span class="glyphicon glyphicon-arrow-up" ng-if="usersList.sortInReverseMode"></span>
+            </button>
+          </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
           <user-search search-query="usersList.searchQuery"></user-search>
