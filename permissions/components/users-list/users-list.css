@@ -9,6 +9,22 @@
   margin: 0.4rem 0;
 }
 
+.users-list-component  .users-sorting {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;		
+}
+
+.users-list-component .users-sorting .users-sorting-tool {
+  margin-right: 1rem;
+  flex: 0 0 auto;
+}
+
+.users-list-component .users-sorting .users-order-button {
+  margin-right: 0;
+  margin-left: 1rem;
+}
+
 .relative {
   position: relative;
 }
