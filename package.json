@@ -10,10 +10,11 @@
     "gulp-sourcemaps": "^1.6.0"
   },
   "devDependencies": {
-    "gulp-ng-templates": "0.0.6",    
+    "gulp-ng-templates": "0.0.6",
     "karma": "^0.13.11",
     "karma-jasmine": "^0.3.6",
     "karma-ng-html2js-preprocessor": "^0.2.0",
+    "karma-ng-json2js-preprocessor": "^1.1.1",
     "karma-phantomjs-launcher": "^0.2.1",
     "karma-spec-reporter": "0.0.23",
     "phantomjs": "^1.9.19",

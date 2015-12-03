@@ -1,23 +1,29 @@
 module.exports = function(config) {
   config.set({
-    browsers: ['PhantomJS'],
+    browsers: ['Chrome'],
 
     frameworks: ['jasmine'],
 
     plugins: [
      'karma-jasmine',
-     'karma-phantomjs-launcher',
+     'karma-chrome-launcher',
      'karma-spec-reporter',
-     'karma-ng-html2js-preprocessor'
+     'karma-ng-html2js-preprocessor',
+     'karma-ng-json2js-preprocessor'
     ],
 
     preprocessors: {
-      './permissions/**/*.template.html': ['ng-html2js']
+      './permissions/**/*.template.html': ['ng-html2js'],
+      './test-data/*.json': ['ng-json2js']
     },
 
     ngHtml2JsPreprocessor: {
       stripPrefix: 'permissions/',
       moduleName: 'admin.permissions.templates'
+    },
+
+    ngJson2JsPreprocessor: {
+      stripPrefix: 'test-data/'
     },
 
     reporters: ['spec'],
@@ -40,25 +46,26 @@ module.exports = function(config) {
       "./bower_components/angular/angular.min.js",
       "./bower_components/angular-mocks/angular-mocks.js",
       './permissions/common/*.js',
-      './permissions/services/**/*.js',      
+      './permissions/services/**/*.js',
       './permissions/components/user-modal-dialog/user-modal-dialog.controller.js',
       './permissions/components/user-modal-dialog/user-modal-dialog.directive.js',
-      './permissions/components/user-modal-dialog/user-modal-dialog.js',      
+      './permissions/components/user-modal-dialog/user-modal-dialog.js',
       './permissions/components/users-list/user-item/user-item.controller.js',
       './permissions/components/users-list/user-item/user-item.directive.js',
-      './permissions/components/users-list/user-item/user-item.js',      
+      './permissions/components/users-list/user-item/user-item.js',
       './permissions/components/users-list/users-sorting/users-sorting.controller.js',
       './permissions/components/users-list/users-sorting/users-sorting.directive.js',
-      './permissions/components/users-list/users-sorting/users-sorting.js',      
-      './permissions/components/users-list/users-list.filter.js',
+      './permissions/components/users-list/users-sorting/users-sorting.js',
+      './permissions/components/users-list/filter-users-by-query.filter.js',
       './permissions/components/users-list/users-list.controller.js',
       './permissions/components/users-list/user-search.directive.js',
       './permissions/components/users-list/users-list.directive.js',
       './permissions/components/users-list/users-list.js',
       './permissions/components/**/*.js',
       './permissions/*.js',
-      './permissions/**/*.spec.js',
-      './permissions/**/*.template.html'
+      './permissions/**/*.template.html',
+      './test-data/*.json',
+      './permissions/**/*.spec.js'
     ],
 
     phantomjsLauncher: {

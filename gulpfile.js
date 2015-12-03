@@ -10,16 +10,16 @@ gulp.task('build', function() {
   return gulp.src([
       '!./permissions/**/*.spec.js',
       './permissions/common/*.js',
-      './permissions/services/**/*.js',      
+      './permissions/services/**/*.js',
       './permissions/components/user-modal-dialog/user-modal-dialog.controller.js',
       './permissions/components/user-modal-dialog/user-modal-dialog.directive.js',
-      './permissions/components/user-modal-dialog/user-modal-dialog.js',      
+      './permissions/components/user-modal-dialog/user-modal-dialog.js',
       './permissions/components/users-list/user-item/user-item.controller.js',
       './permissions/components/users-list/user-item/user-item.directive.js',
-      './permissions/components/users-list/user-item/user-item.js',      
+      './permissions/components/users-list/user-item/user-item.js',
       './permissions/components/users-list/users-sorting/users-sorting.controller.js',
       './permissions/components/users-list/users-sorting/users-sorting.directive.js',
-      './permissions/components/users-list/users-sorting/users-sorting.js',      
+      './permissions/components/users-list/users-sorting/users-sorting.js',
       './permissions/components/users-list/filter-users-by-query.filter.js',
       './permissions/components/users-list/users-list.controller.js',
       './permissions/components/users-list/user-search.directive.js',
@@ -45,7 +45,9 @@ gulp.task('build-styles', function() {
 gulp.task('test', function (done) {
   return karma.start({
     configFile: __dirname + '/karma.conf.js',
-    singleRun: true
+    action: 'watch',
+    showStack: true
+    //singleRun: true
   }, function() {
     done();
   });

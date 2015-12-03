@@ -1,51 +1,19 @@
 describe('users-list test::', function() {
+  var users, permissions, areas;
 
-  var users = [
-    { id: 1, name: 'User1', cai: 'TUSER1', active: true, permissions: [
-        { id: 1, name: 'CD Edit', active: true, areas: [] },
-        { id: 2, name: 'CD Create', active: false, areas: [] },
-        { id: 3, name: 'PRI Edit', active: false, areas: [
-            { id: 2, name:'ABC' }
-          ]
-        },
-        { id: 4, name: 'DPR Edit', active: true, areas: [
-            { id: 3, name:'DEF' }
-          ]
-        }
-      ]
-    },
-    { id: 2, name: 'User2', cai: 'TUSER2', active: true, permissions: [
-        { id: 1, name: 'CD Edit', active: true, areas: [
-            { id: 1, name: 'XYZ' }
-          ]
-        },
-        { id: 2, name: 'CD Create', active: false, areas: []
-        },
-        { id: 6, name: 'OPER Edit', active: false, areas: [] }
-      ]
-    }
-  ];
-  var areas = [
-    { id: 1, name: 'XYZ' },
-    { id: 2, name:'ABC' },
-    { id: 3, name:'DEF' },
-    { id: 4, name: 'all' }
-  ];
-  var permissions = [
-    { id: 1, name: 'CD Edit',   active: true },
-    { id: 2, name: 'CD Create', active: false },
-    { id: 3, name: 'PRI Edit',  active: false },
-    { id: 4, name: 'DPR Edit',  active: true },
-    { id: 5, name: 'EXEC Edit', active: true },
-    { id: 6, name: 'OPER Edit', active: false }
-  ];
-
+  beforeEach(module('users.json'));
+  beforeEach(module('permissions.json'));
+  beforeEach(module('areas.json'));
   beforeEach(module('admin.permissions.services.usersService'));
   beforeEach(module('admin.permissions.usersList'));
   beforeEach(module('admin.permissions.templates'));
 
-  beforeEach(inject(function($injector) {
-     $httpBackend = $injector.get('$httpBackend');
+  beforeEach(inject(function($injector, _users_, _permissions_, _areas_) {
+    users = _users_;
+    permissions = _permissions_;
+    areas = _areas_;
+
+    $httpBackend = $injector.get('$httpBackend');
 
      var usersRequestHandler = $httpBackend.when('GET', '/users').respond(users);
      var permissionsRequestHandler = $httpBackend.when('GET', '/permissions').respond(permissions);
