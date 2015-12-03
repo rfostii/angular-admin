@@ -1,4 +1,4 @@
-[
+var areas = [
   {
     "id": 1,
     "name": "XYZ"
@@ -15,4 +15,4 @@
     "id": 4,
     "name": "all"
   }
-]
+];

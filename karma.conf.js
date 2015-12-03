@@ -6,27 +6,8 @@ module.exports = function(config) {
 
     plugins: [
      'karma-jasmine',
-     'karma-phantomjs-launcher',
-     'karma-spec-reporter',
-     'karma-ng-html2js-preprocessor',
-     'karma-ng-json2js-preprocessor'
+     'karma-phantomjs-launcher'
     ],
-
-    preprocessors: {
-      './permissions/**/*.template.html': ['ng-html2js'],
-      './test-data/*.json': ['ng-json2js']
-    },
-
-    ngHtml2JsPreprocessor: {
-      stripPrefix: 'permissions/',
-      moduleName: 'admin.permissions.templates'
-    },
-
-    ngJson2JsPreprocessor: {
-      stripPrefix: 'test-data/'
-    },
-
-    reporters: ['spec'],
 
     specReporter: {
         maxLogLines: 5,         // limit number of lines logged per test
@@ -41,10 +22,10 @@ module.exports = function(config) {
     colors: true,
 
     files: [
-      "./bower_components/jquery/dist/jquery.min.js",
-      "./bower_components/bootstrap/dist/js/bootstrap.min.js",
-      "./bower_components/angular/angular.min.js",
-      "./bower_components/angular-mocks/angular-mocks.js",
+      "./libs/jquery.min.js",
+      "./libs/bootstrap/js/bootstrap.min.js",
+      "./libs/angular.min.js",
+      "./libs/angular-mocks.js",
       './permissions/common/*.js',
       './permissions/services/**/*.js',
       './permissions/components/user-modal-dialog/user-modal-dialog.controller.js',
@@ -60,8 +41,7 @@ module.exports = function(config) {
       './permissions/components/users-list/users-list.js',
       './permissions/components/**/*.js',
       './permissions/*.js',
-      './permissions/**/*.template.html',
-      './test-data/*.json',
+      './test-data/*.js',
       './permissions/**/*.spec.js'
     ],
 

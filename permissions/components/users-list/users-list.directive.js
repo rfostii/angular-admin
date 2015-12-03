@@ -13,7 +13,7 @@
           },
           controller: 'usersCtrl',
           controllerAs: 'usersList',
-          templateUrl: 'components/users-list/users-list.template.html',
+          templateUrl: '/permissions/components/users-list/users-list.template.html',
           bindToController: true,
           link: link
     };

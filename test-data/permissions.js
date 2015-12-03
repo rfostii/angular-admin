@@ -1,4 +1,4 @@
-[
+var permissions = [
   {
     "id": 1,
     "name": "CD Edit",
@@ -29,4 +29,4 @@
     "name": "OPER Edit",
     "active": false
   }
-]
+];

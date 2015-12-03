@@ -2,8 +2,7 @@
   'use strict';
 
   angular.module('admin.permissions', [
-      'ngMockE2E',
-      'admin.permissions.templates',      
+      'ngMockE2E',    
       'admin.permissions.common.adjustSizeDirective',
       'admin.permissions.usersList'
     ])
