@@ -14,10 +14,10 @@ describe('users-list test::', function() {
     areas = _areas_;
 
     $httpBackend = $injector.get('$httpBackend');
-
-     var usersRequestHandler = $httpBackend.when('GET', '/users').respond(users);
-     var permissionsRequestHandler = $httpBackend.when('GET', '/permissions').respond(permissions);
-     var areasRequestHandler = $httpBackend.when('GET', '/areas').respond(areas);
+    
+     $httpBackend.when('GET', '/users').respond(users);
+     $httpBackend.when('GET', '/permissions').respond(permissions);
+     $httpBackend.when('GET', '/areas').respond(areas);
    }));
 
   describe('users-list.fitler test::', function() {
