@@ -15,14 +15,12 @@
 		<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 	</head>
 	<body>
-		<div id="app">
-			<users-list users="users"></users-list>
-		</div>
+		<users-list users="users"></users-list>		
 		<script type="text/javascript" src="/dist/admin.permissions.templates.js"></script>
 		<script type="text/javascript" src="/dist/bundle.js"></script>
 		<script type="text/javascript">
 			angular.module('admin', ['admin.permissions']);
-			angular.bootstrap(document.getElementById('app'), ['admin']);
+			angular.bootstrap(document.body, ['admin']);
 		</script>
 	</body>
 </html>
