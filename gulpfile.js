@@ -14,9 +14,9 @@ gulp.task('build', function() {
       './permissions/components/user-modal-dialog/user-modal-dialog.controller.js',
       './permissions/components/user-modal-dialog/user-modal-dialog.directive.js',
       './permissions/components/user-modal-dialog/user-modal-dialog.js',
-      './permissions/components/users-list/user-item/user-item.controller.js',
-      './permissions/components/users-list/user-item/user-item.directive.js',
-      './permissions/components/users-list/user-item/user-item.js',
+      './permissions/components/user-item/user-item.controller.js',
+      './permissions/components/user-item/user-item.directive.js',
+      './permissions/components/user-item/user-item.js',
       './permissions/components/users-list/filter-users-by-query.filter.js',
       './permissions/components/users-list/users-list.controller.js',
       './permissions/components/users-list/user-search.directive.js',
@@ -35,7 +35,7 @@ gulp.task('build-styles', function() {
   return gulp.src([
     './permissions/components/user-modal-dialog/*.css',
     './permissions/components/users-list/*.css',
-    './permissions/components/users-list/user-item/*.css'
+    './permissions/components/user-item/*.css'
   ])
   .pipe(sourcemaps.init())
   .pipe(concat('style.css'))

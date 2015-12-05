@@ -48,7 +48,7 @@ describe('manage permissions page::', function() {
   it('should filter users by query', function() {
     var userList = element.all(by.css('user-item'));
 
-    element(by.css('user-search input')).sendKeys('TUSER1');
+    element(by.model('usersList.searchQuery')).sendKeys('TUSER1');
 
     expect(userList.count()).toEqual(1);
   });
