@@ -1,6 +1,26 @@
+.user-modal-dialog .modal-content {
+  max-height: 75rem;
+}
+
+.user-modal-dialog .modal-body{
+  max-height: 60rem;
+  overflow-y: auto;
+}
+
 .user-modal-dialog .user-permissions-list {
   display: inline-block;
   width: 50%;
+}
+
+.user-modal-dialog .areas-list {
+  border: 1px solid #eee;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  height: 10rem;
+  overflow-x: hidden;
+  overflow-y: auto;
+  width: 70%;
 }
 
 .user-modal-dialog .lookup-in-active-directory {

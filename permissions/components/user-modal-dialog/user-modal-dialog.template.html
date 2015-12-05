@@ -2,8 +2,10 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" >{{::userModalDialog.modalTitle}}</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" ng-bind="::userModalDialog.modalTitle"></h4>
       </div>
       <div class="modal-body">
         <form name="userModalDialog.permissionsForm">
@@ -38,13 +40,13 @@
             <ul>
               <li class="user-permissions-list" ng-repeat="permission in userModalDialog.user.permissions">
                 <label>{{::permission.name}}</label>
-                <ul>
+                <ul class="areas-list">
                   <li ng-repeat="area in userModalDialog.areas">
                     <input
                       type="checkbox"
                       checklist-model="permission.areas"
                       checklist-value="area">
-                    {{::area.name}}
+                      <span ng-bind="::area.name"></span>
                   </li>
                 </ul>
               </li>

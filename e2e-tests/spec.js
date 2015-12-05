@@ -33,7 +33,7 @@ describe('manage permissions page::', function() {
     usersSortingButton.click();
     usersSortingFields.get(1).click();
 
-    expect(userItems.get(0).element(by.binding('userItem.user.name')).getText()).toEqual('Name: User2');
+    expect(userItems.get(0).element(by.binding('userItem.user.name')).getText()).toEqual('User2');
   });
 
   it('should use reverse order', function() {
@@ -42,7 +42,7 @@ describe('manage permissions page::', function() {
 
     orderButton.click();
 
-    expect(userItems.get(0).element(by.binding('userItem.user.name')).getText()).toEqual('Name: User1');
+    expect(userItems.get(0).element(by.binding('userItem.user.name')).getText()).toEqual('User1');
   });
 
   it('should filter users by query', function() {

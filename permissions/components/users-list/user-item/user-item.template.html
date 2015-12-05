@@ -1,21 +1,32 @@
-<div href="#" class="list-group-item user-list-item" ng-class="{'is-user-inactive': !userItem.user.active}">
+<div href="#" class="list-group-item user-list-item"
+  ng-class="{'is-user-inactive': !userItem.user.active}">
   <div class="list-group-item-heading row">
-      <div class="col-xs-4 col-sm-6 col-md-6"><strong>Name:</strong> {{userItem.user.name}}</div>
-      <div class="col-xs-4 col-sm-3 col-md-3"><strong>CAI:</strong> {{userItem.user.cai}}</div>
+      <div class="col-xs-4 col-sm-6 col-md-6">
+        <strong>Name:</strong>
+        <span ng-bind-html="userItem.user.name | highlightMatches: userItem.searchQuery"></span>
+      </div>
       <div class="col-xs-4 col-sm-3 col-md-3">
-        <label><input type="checkbox" ng-change="userItem.saveUser(userItem.user)" ng-model="userItem.user.active">Active</label>
+        <strong>CAI:</strong>
+        <span ng-bind-html="userItem.user.cai | highlightMatches: userItem.searchQuery"></span>
+      </div>
+      <div class="col-xs-4 col-sm-3 col-md-3">
+        <label><input type="checkbox" ng-change="userItem.saveUser(userItem.user)"
+          ng-model="userItem.user.active">Active</label>
       </div>
   </div>
   <div class="list-group-item-text row">
     <h4 class="user-permissions-block-title">Permissions:</h4>
     <div class="user-permissions-block row">
-      <div class="col-md-9">
+      <div class="col-xs-9 col-sm-9 col-md-9">
         <span ng-repeat="permission in userItem.user.permissions | filter : permission.active track by $index">
-          <strong ng-if="permission.areas.length > 0">{{::permission.name}}:</strong>
-          <span class="permissions-area" ng-repeat="area in permission.areas">{{::area.name}}{{$last ? ';' : ','}}</span>
+          <strong ng-if="permission.areas.length > 0" ng-bind="::permission.name + ':'"></strong>
+          <span class="permissions-area"
+            ng-repeat="area in permission.areas"
+            ng-bind-html="area.name + ($last ? ';' : ',') | highlightMatches: userItem.searchQuery">
+          </span>
         </span>
       </div>
-      <div class="col-md-3">
+      <div class="col-xs-3 col-sm-3 col-md-3">
         <a href="#" class="edit-user-permissions right"
           modal-title="Edit User Permissions"
           user-modal-dialog user="userItem.user">Edit permissions</a>

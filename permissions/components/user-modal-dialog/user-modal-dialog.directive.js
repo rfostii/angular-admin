@@ -42,12 +42,14 @@
       /////////////////////////////////////////////////////
 
       function showModal() {
+        var modalScope = $scope.$new();
         var modalDialogTmpl =$templateCache
           .get('components/user-modal-dialog/user-modal-dialog.template.html');
 
-          $modalDialog = $($compile(modalDialogTmpl)($scope));
+          $modalDialog = $($compile(modalDialogTmpl)(modalScope));
           $modalDialog.modal();
           $modalDialog.one('hidden.bs.modal', function() {
+            modalScope.$destroy();
             $modalDialog.remove();
           });
       }

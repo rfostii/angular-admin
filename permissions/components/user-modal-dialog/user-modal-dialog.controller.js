@@ -17,8 +17,8 @@
         vm.isNewUser = true;
       }
 
-      vm.saveUser = saveUser;
       vm.lookupInActiveDirectory = lookupInActiveDirectory;
+      vm.saveUser = saveUser;
 
       init();
       /////////////////////////////////////////////
@@ -30,7 +30,7 @@
         ]).then(function(response) {
           vm.permissions = response[0];
           if (!vm.user.permissions) {
-            vm.user.permissions = $.extend(true, [], vm.permissions);
+            vm.user.permissions = angular.copy(vm.permissions);
           }
           vm.areas = response[1];
         });
@@ -45,14 +45,14 @@
       function cleanForm() {
         if (vm.isNewUser) {
           vm.user = {};
-          vm.user.permissions = $.extend(true, [], vm.permissions);
+          vm.user.permissions = angular.copy(vm.permissions);
         }
       }
 
       function saveUser() {
         if (vm.permissionsForm.$valid) {
           $scope.$emit('validFormData');
-          usersService.saveUser($.extend(true, {}, vm.user)).then(function(user) {
+          usersService.saveUser(angular.copy(vm.user)).then(function(user) {
             if (!vm.isNewUser) {
                 vm.user = user;
             }

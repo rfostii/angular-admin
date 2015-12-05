@@ -26,3 +26,7 @@
 .user-list-item.is-user-inactive {
   background: #eee;
 }
+
+.highlight-match {
+  background-color: yellow;
+}

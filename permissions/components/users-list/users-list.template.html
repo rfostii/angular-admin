@@ -3,36 +3,43 @@
     <div class="panel-body">
       <div class="row">
         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-3">
-          <button class="btn btn-primary add-new-user" user-modal-dialog modal-title="Add User">Add User</button>
+          <button class="btn btn-primary add-new-user"
+            user-modal-dialog modal-title="Add User">Add User</button>
         </div>
         <div class="col-xs-6 col-sm-6 col-md-6 col-lg-5">
           <div class="users-sorting">
             <div class="dropdown users-sorting-tool">
-              <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                Sort by {{usersList.selectedField}}
+              <button class="btn btn-default dropdown-toggle" type="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                Sort by <span ng-bind="usersList.selectedField"></span>
                 <span class="caret"></span>
               </button>
               <ul class="dropdown-menu">
                 <li ng-repeat="field in usersList.fields">
-                  <a href="#" ng-click="usersList.selectField(field)">{{::field}}</a>
+                  <a href="#" ng-click="usersList.selectField(field)" ng-bind="::field"></a>
                 </li>
               </ul>
             </div>
-            <button type="button" class="btn btn-default users-sorting-tool users-order-button" ng-click="usersList.changeReverseMode()">
+            <button type="button" class="btn btn-default users-sorting-tool users-order-button"
+              ng-click="usersList.changeReverseMode()">
               <span class="glyphicon glyphicon-arrow-down" ng-if="!usersList.sortInReverseMode"></span>
               <span class="glyphicon glyphicon-arrow-up" ng-if="usersList.sortInReverseMode"></span>
             </button>
           </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4">
-          <user-search search-query="usersList.searchQuery"></user-search>
+          <input type="text"
+            ng-model="usersList.searchQuery"
+            ng-change="usersList.filterUsers(usersList.searchQuery)"
+            ng-model-options="{debounce: 300}" class="form-control" placeholder="search">
         </div>
       </div>
     </div>
   </div>
   <div class="list-group">
     <user-item
-      ng-repeat="user in usersList.getListOfUsers() | orderBy : usersList.selectedField : usersList.sortInReverseMode track by user.id" user="user">
+      search-query="usersList.searchQuery"
+      ng-repeat="user in usersList.users | orderBy : usersList.selectedField : usersList.sortInReverseMode track by user.id" user="user">
     </user-item>
   </div>
 </div>

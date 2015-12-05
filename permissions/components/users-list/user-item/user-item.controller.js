@@ -17,9 +17,7 @@
     //////////////////////////////////////////////
 
     function saveUser(user) {
-      usersService.saveUser(user).then(function(user) {
-        vm.user = user;
-      });
+      usersService.saveUser(user);
     }
 
     function showListOfAllowedFactories() {

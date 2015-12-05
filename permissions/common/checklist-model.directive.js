@@ -3,6 +3,21 @@
 
   angular.module('admin.permissions.common.checklistModelDirective', [])
     .directive('checklistModel', ['$parse', '$compile', function($parse, $compile) {
+      return {
+        restrict: 'A',
+        scope: true,
+        compile: function($element, $attrs) {
+          if (!$attrs.checklistValue && !$attrs.value) {
+            throw 'You should provide `value` or `checklist-value`.';
+          }
+
+          if (!$attrs.ngModel) {
+            $attrs.$set("ngModel", "checked");
+          }
+
+          return postLinkFn;
+        }
+      };
 
       function contains(arr, item, comparator) {
         if (angular.isArray(arr)) {
@@ -69,21 +84,5 @@
 
         $scope.$parent.$watchCollection(checklistModel, setChecked);
       }
-
-      return {
-        restrict: 'A',
-        scope: true,
-        compile: function($element, $attrs) {
-          if (!$attrs.checklistValue && !$attrs.value) {
-            throw 'You should provide `value` or `checklist-value`.';
-          }
-
-          if (!$attrs.ngModel) {
-            $attrs.$set("ngModel", "checked");
-          }
-
-          return postLinkFn;
-        }
-      };
     }]);
 })();

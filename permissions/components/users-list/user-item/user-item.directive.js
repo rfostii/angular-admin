@@ -4,6 +4,7 @@
 
   angular.module('admin.permissions.userItem.userItemDirective', [
     'admin.permissions.userItem.userItemCtrl',
+    'admin.permissions.userItem.highlightMatchesFilter',
     'admin.permissions.common.checklistModelDirective'
   ]).directive('userItem', userItemDirective);
 
@@ -11,7 +12,8 @@
     return {
       restrict: 'E',
       scope: {
-          user: '='
+          user: '=',
+          searchQuery: '='
         },
         controller: 'userItemCtrl',
         controllerAs: 'userItem',
