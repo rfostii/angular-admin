@@ -38,10 +38,10 @@
             </div>
           </div>
             <ul>
-              <li class="user-permissions-list" ng-repeat="permission in userModalDialog.user.permissions">
+              <li class="user-permissions-list" ng-repeat="permission in userModalDialog.user.permissions track by permission.id">
                 <label>{{::permission.name}}</label>
                 <ul class="areas-list">
-                  <li ng-repeat="area in userModalDialog.areas">
+                  <li ng-repeat="area in userModalDialog.areas track by area.id">
                     <input
                       type="checkbox"
                       checklist-model="permission.areas"
