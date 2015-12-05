@@ -13,7 +13,7 @@
       restrict: 'E',
       scope: {
           user: '=',
-          searchQuery: '='
+          searchQuery: '=?'
         },
         controller: 'userItemCtrl',
         controllerAs: 'userItem',
