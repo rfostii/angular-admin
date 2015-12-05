@@ -1,3 +1,7 @@
+.user-modal-dialog {
+  font-family: 'Nunito', sans-serif
+}
+
 .user-modal-dialog .modal-content {
   max-height: 75rem;
 }
