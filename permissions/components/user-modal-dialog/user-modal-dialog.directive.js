@@ -51,6 +51,7 @@
           $modalDialog.one('hidden.bs.modal', function() {
             modalScope.$destroy();
             $modalDialog.remove();
+            $modalDialog = null;
           });
       }
     }
