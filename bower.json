@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "authors": [],
   "license": "MIT",
+  "directory": "libs/",
   "ignore": [
     "**/.*",
     "node_modules",

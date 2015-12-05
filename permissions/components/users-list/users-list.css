@@ -1,3 +1,21 @@
+@font-face {
+    font-family: Nunito;
+    src: url(/libs/fonts/Nunito/Nunito-Light.ttf);
+    font-weight: lighter;
+}
+
+@font-face {
+    font-family: Nunito;
+    src: url(/libs/fonts/Nunito/Nunito-Regular.ttf);
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: Nunito;
+    src: url(/libs/fonts/Nunito/Nunito-Bold.ttf);
+    font-weight: bold;
+}
+
 .users-list-component {
   font-family: 'Nunito', sans-serif;
   position: relative;
@@ -12,7 +30,7 @@
 .users-list-component  .users-sorting {
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;		
+  justify-content: flex-end;
 }
 
 .users-list-component .users-sorting .users-sorting-tool {

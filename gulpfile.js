@@ -32,11 +32,15 @@ gulp.task('build', function() {
 });
 
 gulp.task('build-styles', function() {
-  return gulp.src('./permissions/**/*.css')
-    .pipe(sourcemaps.init())
-    .pipe(concat('style.css'))
-    .pipe(sourcemaps.write())
-    .pipe(gulp.dest('./dist/'));
+  return gulp.src([
+    './permissions/components/user-modal-dialog/*.css',
+    './permissions/components/users-list/*.css',
+    './permissions/components/users-list/user-item/*.css'
+  ])
+  .pipe(sourcemaps.init())
+  .pipe(concat('style.css'))
+  .pipe(sourcemaps.write())
+  .pipe(gulp.dest('./dist/'));
 });
 
 gulp.task('test', function (done) {
