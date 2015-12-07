@@ -18,7 +18,7 @@
         controller: 'userItemCtrl',
         controllerAs: 'userItem',
         bindToController: true,
-        templateUrl: 'components/user-item/user-item.template.html',
+        templateUrl: 'permissions/components/user-item/user-item.template.html',
         link: link
     };
 

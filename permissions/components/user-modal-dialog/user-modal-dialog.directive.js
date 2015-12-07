@@ -44,7 +44,7 @@
       function showModal() {
         var modalScope = $scope.$new();
         var modalDialogTmpl =$templateCache
-          .get('components/user-modal-dialog/user-modal-dialog.template.html');
+          .get('permissions/components/user-modal-dialog/user-modal-dialog.template.html');
 
           $modalDialog = $($compile(modalDialogTmpl)(modalScope));
           $modalDialog.modal();

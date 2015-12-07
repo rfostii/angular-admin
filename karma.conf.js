@@ -18,7 +18,6 @@ module.exports = function(config) {
     },
 
     ngHtml2JsPreprocessor: {
-      stripPrefix: 'permissions/',
       moduleName: 'admin.permissions.templates'
     },
 
