@@ -8,17 +8,14 @@ module.exports = function(config) {
      'karma-jasmine',
      'karma-phantomjs-launcher',
      'karma-spec-reporter',
-     'karma-ng-html2js-preprocessor',
-     'karma-ng-json2js-preprocessor'
+     'karma-ng-html2js-preprocessor'
     ],
 
     preprocessors: {
-      './permissions/**/*.template.html': ['ng-html2js'],
-      './test-data/*.json': ['ng-json2js']
+      './permissions/**/*.template.html': ['ng-html2js']
     },
 
     ngHtml2JsPreprocessor: {
-      stripPrefix: 'permissions/',
       moduleName: 'admin.permissions.templates'
     },
 
@@ -62,7 +59,7 @@ module.exports = function(config) {
       './permissions/components/**/*.js',
       './permissions/*.js',
       './permissions/**/*.template.html',
-      './test-data/*.json',
+      './test-data/*.js',
       './permissions/**/*.spec.js'
     ],
 

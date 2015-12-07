@@ -3,7 +3,6 @@
 
   angular.module('admin.permissions', [
       'ngMockE2E',
-      'admin.permissions.templates',
       'admin.permissions.common.adjustSizeDirective',
       'admin.permissions.usersList'
     ])

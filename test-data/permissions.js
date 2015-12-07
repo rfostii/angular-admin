@@ -1,0 +1,32 @@
+var permissions = [
+  {
+    "id": 1,
+    "name": "CD Edit",
+    "active": true
+  },
+  {
+    "id": 2,
+    "name": "CD Create",
+    "active": false
+  },
+  {
+    "id": 3,
+    "name": "PRI Edit",
+    "active": false
+  },
+  {
+    "id": 4,
+    "name": "DPR Edit",
+    "active": true
+  },
+  {
+    "id": 5,
+    "name": "EXEC Edit",
+    "active": true
+  },
+  {
+    "id": 6,
+    "name": "OPER Edit",
+    "active": false
+  }
+];

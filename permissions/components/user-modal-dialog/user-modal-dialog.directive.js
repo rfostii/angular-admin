@@ -5,9 +5,9 @@
     'admin.permissions.userModalDialog.userModalDialogCtrl'
   ]).directive('userModalDialog', userModalDialogDirective);
 
-  userModalDialogDirective.$inject = ['$compile', '$http', '$templateCache'];
+  userModalDialogDirective.$inject = ['$compile', '$http'];
 
-  function userModalDialogDirective($compile, $http, $templateCache) {
+  function userModalDialogDirective($compile, $http) {
     return {
           restrict: 'EA',
           scope: {
@@ -43,15 +43,17 @@
 
       function showModal() {
         var modalScope = $scope.$new();
-        var modalDialogTmpl =$templateCache
-          .get('components/user-modal-dialog/user-modal-dialog.template.html');
-
-          $modalDialog = $($compile(modalDialogTmpl)(modalScope));
-          $modalDialog.modal();
-          $modalDialog.one('hidden.bs.modal', function() {
-            modalScope.$destroy();
-            $modalDialog.remove();
-            $modalDialog = null;
+        
+        $http
+          .get('permissions/components/user-modal-dialog/user-modal-dialog.template.html')
+          .then(function (response) {
+            $modalDialog = $($compile(response.data)(modalScope));
+            $modalDialog.modal();
+            $modalDialog.one('hidden.bs.modal', function() {
+              modalScope.$destroy();
+              $modalDialog.remove();
+              $modalDialog = null;
+            });
           });
       }
     }

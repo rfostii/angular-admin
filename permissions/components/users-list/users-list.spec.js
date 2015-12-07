@@ -1,23 +1,14 @@
 describe('users-list test::', function() {
-  var users, permissions, areas;
-
-  beforeEach(module('users.json'));
-  beforeEach(module('permissions.json'));
-  beforeEach(module('areas.json'));
   beforeEach(module('admin.permissions.services.usersService'));
   beforeEach(module('admin.permissions.usersList'));
   beforeEach(module('admin.permissions.templates'));
 
-  beforeEach(inject(function($injector, _users_, _permissions_, _areas_) {
-    users = _users_;
-    permissions = _permissions_;
-    areas = _areas_;
-
+  beforeEach(inject(function($injector) {
     $httpBackend = $injector.get('$httpBackend');
-    
-     $httpBackend.when('GET', '/users').respond(users);
-     $httpBackend.when('GET', '/permissions').respond(permissions);
-     $httpBackend.when('GET', '/areas').respond(areas);
+
+    $httpBackend.when('GET', '/users').respond(users);
+    $httpBackend.when('GET', '/permissions').respond(permissions);
+    $httpBackend.when('GET', '/areas').respond(areas);
    }));
 
   describe('users-list.fitler test::', function() {

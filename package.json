@@ -2,19 +2,12 @@
   "name": "angular-admin",
   "version": "1.0.0",
   "description": "",
-  "main": "gulpfile.js",
-  "dependencies": {
-    "browser-sync": "^2.10.0",
-    "gulp": "^3.9.0",
-    "gulp-concat": "^2.6.0",
-    "gulp-sourcemaps": "^1.6.0"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "gulp-ng-templates": "0.0.6",
     "karma": "^0.13.11",
+    "karma-cli": "^0.1.1",
     "karma-jasmine": "^0.3.6",
     "karma-ng-html2js-preprocessor": "^0.2.0",
-    "karma-ng-json2js-preprocessor": "^1.1.1",
     "karma-phantomjs-launcher": "^0.2.1",
     "karma-spec-reporter": "0.0.23",
     "phantomjs": "^1.9.19",
@@ -22,15 +15,5 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/rfostii/angular-admin.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/rfostii/angular-admin/issues"
-  },
-  "homepage": "https://github.com/rfostii/angular-admin#readme"
+  }
 }

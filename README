@@ -1,23 +1,19 @@
 #############################
 setup project
 #############################
-git checkout -b develop
-git pull origin develop
+git checkout -b without-external-dependencies
+git pull origin without-external-dependencies
 
-npm i gulp karma bower -g
-npm i
-bower install
-webdriver-manager start
-gulp dev
+npm config get prefix #get path to folder with global modules
+#copy all packages from node_modules to folder with global modules
 
 #############################
 run unit tests
 #############################
 
-gulp test
+karma start
 
 #############################
 run e2e
 #############################
-cd e2e-tests
-protractor protractor.conf.js
+protractor e2e-tests/protractor.conf.js
