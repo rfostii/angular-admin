@@ -1,15 +1,15 @@
 <div href="#" class="list-group-item user-list-item"
   ng-class="{'is-user-inactive': !userItem.user.active}">
   <div class="list-group-item-heading row">
-      <div class="col-xs-4 col-sm-6 col-md-6">
+      <div class="col-xs-4 col-sm-4 col-md-4">
         <strong>Name:</strong>
         <span ng-bind-html="userItem.user.name | highlightMatches: userItem.searchQuery"></span>
       </div>
-      <div class="col-xs-4 col-sm-3 col-md-3">
+      <div class="col-xs-4 col-sm-4 col-md-4">
         <strong>CAI:</strong>
         <span ng-bind-html="userItem.user.cai | highlightMatches: userItem.searchQuery"></span>
       </div>
-      <div class="col-xs-4 col-sm-3 col-md-3">
+      <div class="col-xs-4 col-sm-4 col-md-4">
         <label><input type="checkbox" ng-change="userItem.saveUser(userItem.user)"
           ng-model="userItem.user.active">Active</label>
       </div>
